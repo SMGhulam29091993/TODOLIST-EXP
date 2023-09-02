@@ -8,7 +8,9 @@ app.set('view engine', "ejs");
 app.set("views", "./views");
 
 app.get("/", (req,res)=>{
-    return res.render('home')
+    return res.render('home',{
+        title : 'Todo-List'
+    })
 })
 
 app.listen(port, (err)=>{
