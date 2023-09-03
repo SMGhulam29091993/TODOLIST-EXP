@@ -171,7 +171,7 @@ ul li div.task:first-child>p{
     text-transform: uppercase;
 }
 ul li .task>p:first-child>span{ 
-    margin-left: 5rem;
+    margin-left: 2rem;
     background-color: orange;
     padding:0.5rem;
     letter-spacing: 0.1rem;
@@ -185,7 +185,7 @@ ul li .task .date span{
     margin: 0.2rem;
     color: red;
 }
-ul li .task>p:before{
+ul li:before{
     content:'';
     position: absolute;
     top:1rem;
@@ -201,6 +201,13 @@ ul li.checked{
     color:#ffffff;
     text-decoration: line-through;
 }
-ul li.checked::before{
+ul li.checked:before{
     background-image: url(image/checked.png);
+}
+ul li .delete-button a{
+    text-decoration: none;
+    color: var(--font-color);
+}
+ul li .delete-button a:hover{
+    color : orange;
 }

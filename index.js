@@ -42,11 +42,14 @@ app.post("/create_task", (req,res)=>{
     console.log(req.body);
     // taskContainer.push(req.body);
     // return res.redirect("/");
-    Task.create({
-        task : req.body.task,
-        dueDate : req.body.dueDate,
-        category : req.body.category
-    })
+    Task.create(
+        req.body
+    //     {
+    //     task : req.body.task,
+    //     dueDate : req.body.dueDate,
+    //     category : req.body.category
+    // }
+    )
     .then(task=>{
         console.log("******",task);
         return res.redirect('back');
