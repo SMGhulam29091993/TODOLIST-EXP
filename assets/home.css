@@ -18,17 +18,17 @@ h1{
     text-align: center;
     margin: 2rem auto;
 }
-h1::before{
+/* h1::before{
     content:'';
-    position: absolute;
-    top:2.3rem;
-    left:42%;
+    position: relative;
+    top:0.4rem;
+    left:20rem;
     height:2rem;
     width:2rem;
     background-size: cover;
     background-position: center;
     background-image: url(image/icon.png);
-}
+} */
 div.container{
     margin: 2rem auto;
     width: 80%;
@@ -149,8 +149,7 @@ form .btn{
 .task-field{
     margin: 2rem auto;
     width: 80%;
-    height :30%;
-    border: 1px solid orange;
+    height:30%;
 }
 ul li{
     list-style: none;
@@ -160,12 +159,14 @@ ul li{
     user-select: none;
     cursor: pointer;
     position: relative;
-    transition: all 0.2s ease-in-out;
-    color: #fff;
-}
-ul li{
+    color: var(--font-color);
     display: flex;
     justify-content: space-between;
+    transition : all 1s ease-in-out;
+}
+ul li:hover{
+    transform: translateX(-10px) translateY(-10px);
+    box-shadow: 2px 3px 6px 4px white;
 }
 ul li div.task:first-child>p{
     text-transform: uppercase;
@@ -210,4 +211,136 @@ ul li .delete-button a{
 }
 ul li .delete-button a:hover{
     color : orange;
+}
+
+/* -------------Responsiveness----------------- */
+
+@media screen and (max-width:1000px){
+    form .btn{
+        margin: 1rem;
+    }
+}
+
+@media screen and (max-width:850px){
+    form .btn{
+        margin: 1rem;
+    }
+    ul li,
+    div.category-field label,
+    div.category-field select,
+    div.date-container label,
+    div.date-container #dueDate,
+    form div.input-field input,
+    form div.input-field input::placeholder{
+        font-size: 0.8rem;
+    }
+}
+
+@media screen and (max-width:670px){
+    form .btn{
+        margin: 1rem;
+    }
+    ul li,
+    div.category-field label,
+    div.category-field select,
+    div.date-container label,
+    div.date-container #dueDate,
+    form div.input-field input,
+    form div.input-field input::placeholder{
+        font-size: 0.7rem;
+    }
+    ul li .task>p{
+        max-width: 550px;
+        
+    }
+    ul li .task>p:first-child>span{
+        padding : 0.2rem;
+        font-size: 0.4rem;
+        margin-left: 1rem;
+    }
+}
+@media screen and (max-width:550px){
+    form .btn{
+        margin: 1rem;
+        padding:0.5rem;
+        line-height: 0.4;
+        font-size: 0.7rem; 
+    }
+    ul li,
+    div.category-field label,
+    div.category-field select,
+    div.date-container label,
+    div.date-container #dueDate,
+    form div.input-field input,
+    form div.input-field input::placeholder{
+        font-size: 0.6rem;
+    }
+    ul li .task>p{
+        max-width: 550px;
+        
+    }
+    ul li .task>p:first-child>span{
+        padding : 0.2rem;
+        font-size: 0.5rem;
+        margin-left: 1rem;
+    }
+    div.date-container #dueDate{
+        padding: 0.2rem;  
+        line-height: 0.4;  
+    }
+    div.category-field select{
+        padding:0.2rem;
+        line-height: 0.6; 
+    }
+}
+@media screen and (max-width:450px){
+    form .btn{
+        margin: 1rem;
+        padding:0.4rem;
+        line-height: 0.4;
+        font-size: 0.5rem; 
+    }
+    ul li,
+    div.category-field label,
+    div.category-field select,
+    div.date-container label,
+    div.date-container #dueDate,
+    form div.input-field input,
+    form div.input-field input::placeholder{
+        font-size: 0.5rem;
+    }
+    ul li .task>p{
+        max-width: 450px;
+        
+    }
+    ul li .task>p:first-child>span{
+        padding : 0.2rem;
+        font-size: 0.3rem;
+        margin-left: 1rem;
+    }
+    div.date-container #dueDate{
+        padding: 0.2rem;  
+        line-height: 0.3;  
+    }
+    div.category-field select{
+        padding:0.2rem;
+        line-height: 0.3; 
+    }
+}
+@media screen and (max-width: 350px){
+    div.date-container #dueDate{
+        padding: 0.1rem;  
+        line-height: 0.1; 
+        font-size: 0.2rem; 
+    }
+    div.category-field select{
+        padding:0.1rem;
+        line-height: 0.1; 
+        font-size: 0.2rem;
+    }
+    ul li .task>p:first-child>span{
+        padding : 0.1rem;
+        font-size: 0.3rem;
+        margin-left: 1rem;
+    }
 }
