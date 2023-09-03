@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/1013d8b8e8.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/home.css">
     <title><%= title %></title>
 </head>
 <body>
@@ -35,10 +36,12 @@
             <% for (let i of task_container) { %>
               <% if (i) { %>
                 <li>
-                  <p class="task">
-                    <span><%= i.task %></span><span><%= i.category %></span>
-                  </p>
-                  <p class="date"><span>Due-Date</span><span><%= i.dueDate %></span></p>
+                  <div class="task">
+                    <p>
+                      <%= i.task %><span><%= i.category %></span>
+                    </p>
+                    <p class="date"><span>Due-Date</span><span><%= i.dueDate %></span></p>
+                  </div>
                   <div class="delete-button">
                     <a href="/delete_task/?id=<%= i._id %>">
                       <i class="fa-solid fa-trash"></i>

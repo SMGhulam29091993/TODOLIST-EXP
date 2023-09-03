@@ -1,0 +1,206 @@
+*{
+    margin :0;
+    padding: 0;
+    font-family: "Poppins" sans-serif;
+}
+:root{
+    --background-image : linear-gradient(90deg, black,rgb(36, 30, 30)); 
+    --font-color : #fff;
+    --date-category-bgc : rgb(43, 40, 40);
+    --btn-color:rgb(63, 49, 24);
+}
+body{
+    width: 100vw;
+    background: var(--background-image);
+    color : var(--font-color);
+}
+h1{
+    text-align: center;
+    margin: 2rem auto;
+}
+h1::before{
+    content:'';
+    position: absolute;
+    top:2.3rem;
+    left:42%;
+    height:2rem;
+    width:2rem;
+    background-size: cover;
+    background-position: center;
+    background-image: url(image/icon.png);
+}
+div.container{
+    margin: 2rem auto;
+    width: 80%;
+    height :30%;
+}
+form{
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+/* styling the input task  */
+form div.input-field{
+    width: 60%;
+    margin-bottom: 20px;
+}
+form div.input-field input{
+    width : 100%;
+    background-color: rgb(35, 41, 41);
+    padding : 1rem;
+    letter-spacing: 0.1rem;
+    line-height: 1rem;
+    border: none;
+    border-bottom: 1px solid whitesmoke;
+    outline: none;
+    border-radius: 1rem;
+    color : var(--font-color);
+    font-size: 1rem;
+}
+form div.input-field input::placeholder{
+    color: var(--font-color);
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+/* styling the date category field */
+form div.date-category-container{
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+/* styling the category */
+div.category-field{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+div.category-field label{
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+div.category-field select{
+    background-color: var(--date-category-bgc);
+    padding : 0.5rem;
+    letter-spacing: 0.2rem;
+    line-height: 1.6;
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--font-color);
+    border-radius: 1rem;
+    border: none;
+    outline:none;
+    cursor: pointer;
+}
+div.category-field select:focus{
+    background-color: var(--date-category-bgc);
+    font-weight: bold;
+}
+
+/* styling the date */
+div.date-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+div.date-container label{
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+div.date-container #dueDate{
+    background-color: var(--date-category-bgc);
+    padding : 0.5rem;
+    letter-spacing: 0.2rem;
+    line-height: 1.6;
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--font-color);
+    border-radius: 1rem;
+    border: none;
+    outline:none;
+    cursor: pointer;
+}
+div.date-container #dueDate::-webkit-calendar-picker-indicator{
+    filter: invert(1);
+    cursor: pointer;
+}
+/* styling the btn in form */
+form .btn{
+    padding: 1rem;
+    background-color: var(--btn-color);
+    outline: none;
+    border: none;
+    cursor: pointer;
+    color: var(--font-color);
+    letter-spacing: 0.1rem;
+    line-height: 1;
+    border-radius: 1rem;
+    text-transform: uppercase;
+}
+/* styling the task ul li */
+.task-field{
+    margin: 2rem auto;
+    width: 80%;
+    height :30%;
+    border: 1px solid orange;
+}
+ul li{
+    list-style: none;
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 12px 8px 12px 50px;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.2s ease-in-out;
+    color: #fff;
+}
+ul li{
+    display: flex;
+    justify-content: space-between;
+}
+ul li div.task:first-child>p{
+    text-transform: uppercase;
+}
+ul li .task>p:first-child>span{ 
+    margin-left: 5rem;
+    background-color: orange;
+    padding:0.5rem;
+    letter-spacing: 0.1rem;
+    line-height: 1;
+    border-radius: 1rem;
+    text-transform: uppercase;
+
+}
+ul li .task .date span{
+    display: block;
+    margin: 0.2rem;
+    color: red;
+}
+ul li .task>p:before{
+    content:'';
+    position: absolute;
+    top:1rem;
+    left:1rem;
+    height:28px;
+    width:28px;
+    border-radius: 50%;
+    background-image: url(image/unchecked.png);
+    background-size: cover;
+    background-position: center;
+}
+ul li.checked{
+    color:#ffffff;
+    text-decoration: line-through;
+}
+ul li.checked::before{
+    background-image: url(image/checked.png);
+}

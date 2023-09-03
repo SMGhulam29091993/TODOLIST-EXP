@@ -12,7 +12,7 @@ app.set("views", "./views");
 
 // adding middleware
 app.use(express.urlencoded());
-
+app.use(express.static('assets'));
 var taskContainer = [
     // {
     //     task : "create task",
