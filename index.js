@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 
 const port = 8000;
-
+// requiring db and collection from their respective file 
 const mongoose = require("./config/mongoose");
 const Task = require("./models/task");
 
@@ -23,7 +23,7 @@ var taskContainer = [
 
 
 
-
+// the below route and controller find the data from collection db and display it to the home.ejs
 app.get("/", (req,res)=>{
     Task.find({})
     .then(tasks=>{
@@ -37,19 +37,10 @@ app.get("/", (req,res)=>{
     })
     
 });
-
+// taking the data from the form and storing it as a schema within the collection call Task
 app.post("/create_task", (req,res)=>{
     console.log(req.body);
-    // taskContainer.push(req.body);
-    // return res.redirect("/");
-    Task.create(
-        req.bodyadd
-    //     {
-    //     task : req.body.task,
-    //     dueDate : req.body.dueDate,
-    //     category : req.body.category
-    // }
-    )
+    Task.create(req.body)
     .then(task=>{
         console.log("******",task);
         return res.redirect('back');
@@ -60,7 +51,7 @@ app.post("/create_task", (req,res)=>{
     })
 })
 
-
+// below router and controller gets the id using query and delete any particular task
 app.get("/delete_task",(req,res)=>{
     console.log(req.query);
     let id = req.query.id;
